@@ -1,0 +1,23 @@
+{
+  "name": "employee_admin",
+  "version": "1.0.0",
+  "description": "It is a web application of a company to organize their employees of HR operations.",
+  "main": "index.js",
+  "dependencies": {
+    "json-schema-faker": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asrinivas61/EmpAdmin_JqueryAjax.git"
+  },
+  "author": "Srinivasa Rao Adapa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asrinivas61/EmpAdmin_JqueryAjax/issues"
+  },
+  "homepage": "https://github.com/asrinivas61/EmpAdmin_JqueryAjax#readme"
+}

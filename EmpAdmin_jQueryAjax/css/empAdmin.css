@@ -1,0 +1,405 @@
+/* ==========================================================================
+   								 font imports
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Courgette|Aldrich');
+
+/* ==========================================================================
+								Body, HTML
+   ========================================================================== */
+
+body,html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	/*background: rgba(244, 244, 244,.28);*/
+}
+
+strong {
+	color: blue;
+}
+
+/* ==========================================================================
+   								Nav Section
+   ========================================================================== */
+
+.bodyContent {
+	overflow: hidden;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+}
+
+#navbar {
+	margin-left: 5%;
+	float: left;
+}
+
+/* ==========================================================================
+   								 Main Container
+   ========================================================================== */
+
+.main {
+	position: relative;
+	top: 50px;
+	min-height: 800px;
+	padding: 10px 10px 0 10px;
+}
+
+.sidebar {
+	position: relative;
+	top: 50px;
+	min-height: 768px;
+}
+
+nav.sidebar, .main{
+-webkit-transition: margin 200ms ease-out;
+  -moz-transition: margin 200ms ease-out;
+  -o-transition: margin 200ms ease-out;
+  transition: margin 200ms ease-out;
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+	color: #CCC;
+	background-color: transparent;
+}
+
+nav:hover .forAnimate{
+	opacity: 1;
+}
+section{
+	padding-left: 15px;
+}
+
+.glyphicon {
+	font-size: 17px;
+	cursor: pointer;
+}
+
+td .glyphicon {
+	padding: 0 10px;
+}
+
+tr .glyphicon-pencil:hover {
+	color: blue;
+}
+tr .glyphicon-trash:hover {
+	color: red;
+}
+
+.heading-row {
+	position: relative;
+	top: 45px;
+}
+
+.heading-row h2 {
+	padding-left: 20px;
+	font-family: 'Courgette', cursive;
+}
+
+.addEmp {
+	color: white;
+	background: #337ab7;
+	padding: 1px 11px 6px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.pagination-nav {
+	position: relative;
+	top: 575px;
+	margin-left: 47%;
+}
+
+.tabHead {
+	float: left;
+}
+
+.searchForm {
+	margin-top: 20px;
+	width: 25%;
+	float: right;
+}
+
+.glyphicon-search {
+	cursor: pointer;
+}
+
+table {
+	border: 1px solid #ccc;
+	position: relative;
+	top: 70px;
+}
+
+table th, td {
+	text-align: center;
+}
+
+/* ==========================================================================
+									Footer
+   ========================================================================== */
+
+footer {
+	clear: both;
+	position: relative;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: -1px -1px 3px black;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 10px 50px 10px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-left ul {
+	margin-left: -30px;
+	margin-top: 20px;
+}
+
+.footer-distributed .footer-left li {
+	line-height: 1.8;
+	text-decoration: none;
+	display: inline;
+	color:  inherit;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+
+.footer-distributed .footer-left li a:hover {
+	color: #eee;
+	text-decoration: underline;
+	text-decoration-color: yellow;
+}
+
+.footer-distributed .footer-company-name{
+	color: yellow;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #fff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #fff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #fff;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons .facebook:hover {
+	background: #3B5998;
+}
+
+.footer-distributed .footer-icons .twitter:hover {
+	background: #00ACEE;
+}
+
+.footer-distributed .footer-icons .linkedIn:hover {
+	background: #0077B5;
+}
+
+.footer-distributed .footer-icons .github:hover {
+	background: #6cc664;
+}
+
+/* ==========================================================================
+     							media Queries
+   ========================================================================== */
+
+@media (min-width: 765px) {
+
+	.main{
+	  position: absolute;
+	  width: calc(100% - 40px); 
+	  margin-left: 40px;
+	  float: right;
+	}
+
+	nav.sidebar:hover + .main{
+	  margin-left: 200px;
+	}
+
+	nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	  margin-left: 0px;
+	}
+
+	nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+	  text-align: center;
+	  width: 100%;
+	  margin-left: 0px;
+	}
+
+	nav.sidebar a{
+	  padding-right: 13px;
+	}
+
+	nav.sidebar .navbar-nav > li:first-child{
+	  border-top: 1px #e5e5e5 solid;
+	}
+
+	nav.sidebar .navbar-nav > li{
+	  border-bottom: 1px #e5e5e5 solid;
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu {
+	  position: static;
+	  float: none;
+	  width: auto;
+	  margin-top: 0;
+	  background-color: transparent;
+	  border: 0;
+	  -webkit-box-shadow: none;
+	  box-shadow: none;
+	}
+
+	nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+	  padding: 0 0px 0 0px;
+	}
+
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+	  color: #777;
+	}
+
+	nav.sidebar{
+	  width: 200px;
+	  height: 100%;
+	  margin-left: -160px;
+	  float: left;
+	  margin-bottom: 0px;
+	}
+
+	nav.sidebar li {
+	  width: 100%;
+	}
+
+	nav.sidebar:hover{
+	  margin-left: 0px;
+	}
+
+	.forAnimate{
+	  opacity: 0;
+	}
+}
+
+@media (min-width: 1330px) {
+
+	.main{
+	  width: calc(100% - 200px);
+	  margin-left: 200px;
+	}
+
+	nav.sidebar{
+	  margin-left: 0px;
+	  float: left;
+	}
+
+	nav.sidebar .forAnimate{
+	  opacity: 1;
+	}
+}

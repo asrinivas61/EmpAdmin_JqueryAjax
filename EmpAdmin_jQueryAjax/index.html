@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Admin</title>
+	<link rel="icon" type="image/png" href="img/employee.ico" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/pagination/pagination.css" />
+	<link rel="stylesheet" type="text/css" href="css/empAdmin.css" />
+</head>
+
+<body>
+	<div class="bodyContent">
+		<!-- Navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand navbar-logo" href="#"><img src="img/icon-hcm.png"></a>
+	        </div>
+	      </div>
+	    <!-- Navbar END -->
+	    </nav>
+
+	    <!-- Side bar -->
+	    <nav class="navbar navbar-default sidebar" role="navigation">
+		    <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>      
+			    </div>
+			    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Dashboard<span class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Profile <span class="caret"></span><span class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+			          <ul class="dropdown-menu forAnimate" role="menu">
+			            <li><a href="#">Update</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Reportar</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Settings</a></li>
+			          </ul>
+			        </li>          
+			        <li ><a onclick="empList()">All Employees<span class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
+			        <li ><a href="#">Tags<span class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+			      </ul>
+			    </div>
+		  	</div>
+		<!-- Sidebar END -->
+		</nav>
+
+		<!-- Emp List Data -->
+		<div>
+			<div class="main"></div>
+			<div class="mainData"></div>
+			<div class="pagination-nav"></div>
+		<!-- List data END -->
+		</div>
+
+		<!-- List Header & Searchbar -->
+		<div class="heading-row">
+			<div class="employeeAdd">
+				<div class="tabHead">
+					<h2>All Employees <span class="addEmp" data-toggle="modal" data-target="#empModal"><span class="hidden-xs showopacity glyphicon glyphicon-plus"></span></span></h2>
+				</div>
+				<div class="searchForm">
+					<form class="pull-right">
+						<div class="form-group">
+				          <div class="input-group">
+				            <input type="text" class="form-control" id="emp_search" placeholder="Search employee...">
+				            <span class="input-group-addon"><span class="glyphicon glyphicon-search search" onclick="searchEmp()"></span></span>
+				          </div>
+				        </div>
+					</form>
+				</div>
+			</div>
+		<!-- Header & Searchbar END -->
+		</div>
+
+		<!-- Error msg display -->
+		<div class="noRecordsFound"></div>
+
+		<!--Bootatrap Modal for Adding & Updating record-->
+		<div class="modal fade" id="empModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		        <h4 class="modal-title" id="myModalLabel">Add Employee Details:</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<form class="container-fluid">
+				    <div class="form-group row">
+				      <label for="Id" class="col-sm-3 col-form-label">ID:</label>
+				      <div class="col-sm-8">
+				        <input type="number" class="form-control" id="Id" placeholder="Employee ID Auto-Generated" readonly="true">
+				      </div>
+				    </div>
+				    <div class="form-group row">
+				      <label for="firstName" class="col-sm-3 col-form-label">First Name:</label>
+				      <div class="col-sm-8">
+				        <input type="text" class="form-control" id="firstName" placeholder="First Name" required="true" />
+				      </div>
+				    </div>
+				    <div class="form-group row">
+				      <label for="lastName" class="col-sm-3 col-form-label">Last Name:</label>
+				      <div class="col-sm-8">
+				        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+				      </div>
+				    </div>
+				    <div class="form-group row">
+				      <label for="email" class="col-sm-3 col-form-label">Email:</label>
+				      <div class="col-sm-8">
+				        <input type="email" class="form-control" id="email" placeholder="Emp Email">
+				      </div>
+				    </div>
+				    <div class="form-group row">
+				      <label for="phone" class="col-sm-3 col-form-label">Phone No:</label>
+				      <div class="col-sm-8">
+				        <input type="number" class="form-control" id="phone" placeholder="Phone Number">
+				      </div>
+				    </div>
+				 </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary" id="updateEmp" onclick="addEmp()">Add Employee</button>
+		      </div>
+		    </div>
+		  </div>
+		<!-- Bootstrap modal END -->
+		</div>
+	<!-- Main body content END -->
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer-distributed">
+		<h1 style="color:red; text-align: center;">Foorter Under Construction</h1>
+		<!-- Footer Left -->
+		<!-- <div class="footer-left">
+			<img src="img/icon-hcm1.png">
+			<ul>
+				<li><a href="index.html">Hollywood</a></li>
+				<li><a href="#">Bollywood</a></li>
+				<li><a href="#">Tollywood</a></li>
+				<li><a href="#">Malluwood</a></li>
+				<li><a href="#">Koliwood</a></li>
+			</ul>
+			<p class="footer-company-name">Copyrights &copy; 2016. All Rights Reserved by Movie Search Inc</p>
+		// Footer Left End
+		</div>
+
+		// Footer Center
+		<div class="footer-center">
+			<div>
+				<i class="fa fa-map-marker"></i>
+				<p><span>Opp. Forum Mall </span> Bangalore, India</p>
+			</div>
+			<div>
+				<i class="fa fa-phone"></i>
+				<p>080 123456</p>
+			</div>
+			<div>
+				<i class="fa fa-envelope"></i>
+				<p><a href="mailto:support@luxurycars.com">support@movie_search.com</a></p>
+			</div>
+		// Footer Center End
+		</div>
+
+		// Footer Right
+		<div class="footer-right">
+			<p class="footer-company-about">
+				<span>About our site</span>
+				it is a movie search site and we publish genuiene rating to all kinds of movies based on audiance and our experts review.
+			</p>
+			// Footer Icons 
+			<div class="footer-icons">
+				<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+				<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+				<a href="#" class="linkedIn"><i class="fa fa-linkedin"></i></a>
+				<a href="#" class="github"><i class="fa fa-github"></i></a>
+			</div>
+		// Footer Right End
+		</div>
+	// Footer End -->
+	</footer>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="css/pagination/pagination.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/empScript.js"></script>
+</body>
+</html>
